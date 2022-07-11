@@ -64,11 +64,14 @@ else {
 */
 
 //Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-List<int> GetNumbers(int numberOfNumbers) {
-    var list = new List<int>();
+List<double> GetNumbers(int numberOfNumbers) {
+    var list = new List<double>();
     var random = new Random();
-
-    for(var i = 0; i < numberOfNumbers; i++) list.Add(random.Next(1, 999));
+    
+    for(var i = 0; i < numberOfNumbers; i++) {
+        var number = Convert.ToDouble($"{random.Next(1, 999)},{random.Next(0, 10000)}");
+        list.Add(number);
+    }
     
     return list;
 }
